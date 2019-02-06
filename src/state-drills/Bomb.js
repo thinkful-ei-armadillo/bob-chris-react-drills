@@ -4,9 +4,9 @@ import React, { Component } from 'react';
 class Bomb extends Component{
     state = {
         count: 0,
-    }, 
+    };  
     
-    let interval = setInterval(() =>{
+    interval = setInterval(() =>{
         this.setState({
             count: this.state.count + 1 
         })
@@ -14,12 +14,12 @@ class Bomb extends Component{
 
 
     componentDidMount(){
-        
+        return this.interval 
     }
 
     bombString(){
         if(this.state.count >= 8){
-            clearInterval(); 
+            clearInterval(this.interval); 
             return "BOOM!!!!"    
         }
         if (this.state.count % 2 === 0){
@@ -39,5 +39,10 @@ class Bomb extends Component{
             </div>
         )
     }
+    
+    componentWillUnmount(){
+        clearInterval(this.interval); 
+    }
+
 }
 export default Bomb; 
