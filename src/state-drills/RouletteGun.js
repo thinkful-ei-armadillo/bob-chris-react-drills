@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../App.js';
 
-class HelloWorld extends Component {
+class RouletteGun extends Component {
 
   state = {
     chamber: null,
@@ -51,4 +51,4 @@ class HelloWorld extends Component {
   }
 }
 
-export default HelloWorld;
+export default RouletteGun;
